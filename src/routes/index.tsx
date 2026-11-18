@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowUpRight, MapPin, Sparkles, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -33,17 +33,28 @@ function Index() {
         <span>Black Friday</span>
       </div>
 
+      <div className="flex items-center justify-center gap-2 bg-ribbon px-4 py-2 text-center text-[11px] font-black uppercase tracking-[0.18em] text-ribbon-foreground sm:text-xs">
+        <Tag className="size-3.5 shrink-0 text-gold" aria-hidden="true" />
+        <span>
+          Black Friday Event — <span className="text-gold">Up to $100 in DoorDash credit</span> · Limited time
+        </span>
+        <Tag className="size-3.5 shrink-0 text-gold" aria-hidden="true" />
+      </div>
+
       <header className="border-b border-border bg-card">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-center px-5 sm:h-[72px] sm:justify-start sm:px-8">
           <img src="/doordash-logo.png" alt="DoorDash" className="h-8 w-auto object-contain sm:h-9" />
         </div>
       </header>
 
-      <section className="px-5 pb-10 pt-12 text-center sm:px-8 sm:pb-14 sm:pt-16">
+      <section className="bf-glow px-5 pb-10 pt-12 text-center sm:px-8 sm:pb-14 sm:pt-16">
         <div className="mx-auto max-w-5xl">
-          <p className="mb-4 text-sm font-bold uppercase tracking-widest text-primary">A little more to enjoy</p>
+          <p className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-gold/50 bg-ribbon px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.18em] text-gold sm:text-xs">
+            <Sparkles className="size-3.5" aria-hidden="true" />
+            Black Friday Deal
+          </p>
           <h1 className="mx-auto max-w-4xl text-4xl font-black leading-tight text-foreground sm:text-5xl lg:text-6xl">
-            Save up to $100 on DoorDash!
+            Save up to <span className="text-primary">$100</span> on DoorDash!
           </h1>
           <div className="mt-7 flex flex-wrap justify-center gap-2.5 sm:gap-3">
             {countries.map((country) => (
@@ -70,9 +81,9 @@ function Index() {
             {steps.map((step, index) => (
               <li
                 key={step}
-                className="flex min-h-20 items-start gap-4 rounded-lg border border-border bg-card p-5 shadow-card sm:min-h-40 sm:flex-col sm:gap-5 sm:text-left"
+                className="flex min-h-20 items-start gap-4 rounded-lg border border-border border-t-2 border-t-gold bg-card p-5 shadow-card sm:min-h-40 sm:flex-col sm:gap-5 sm:text-left"
               >
-                <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-secondary text-sm font-black text-primary">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-ribbon text-sm font-black text-gold">
                   0{index + 1}
                 </span>
                 <span className="min-w-0 flex-1 pt-1 text-base font-semibold leading-snug text-card-foreground sm:pt-0 sm:text-lg">
@@ -96,12 +107,25 @@ function Index() {
         </div>
       </section>
 
-      <section className="flex-1 bg-primary px-5 py-10 text-center text-primary-foreground sm:px-8 sm:py-12">
+      <section className="flex-1 border-t-2 border-t-gold bg-ribbon px-5 py-10 text-center text-ribbon-foreground sm:px-8 sm:py-12">
         <div className="mx-auto max-w-3xl">
+          <p className="mb-2 text-[11px] font-black uppercase tracking-[0.2em] text-gold sm:text-xs">Black Friday · Ends soon</p>
           <h2 className="text-2xl font-black sm:text-3xl">Ready to get started?</h2>
-          <p className="mt-2 text-sm text-primary-foreground/85 sm:text-base">
+          <p className="mt-2 text-sm text-ribbon-foreground/80 sm:text-base">
             Take the first step toward your DoorDash savings.
           </p>
+          <div className="mt-6">
+            <Button
+              asChild
+              size="lg"
+              className="h-12 w-full max-w-sm rounded-lg bg-gold px-5 text-base font-black uppercase text-gold-foreground shadow-gold transition-transform hover:scale-[1.02] hover:bg-gold/90 sm:text-lg"
+            >
+              <a href={offerUrl} aria-label="Claim your Black Friday DoorDash credit">
+                Claim the Deal
+                <ArrowUpRight className="size-5" aria-hidden="true" />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
     </main>

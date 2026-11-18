@@ -47,6 +47,10 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-ribbon: var(--ribbon);
+  --color-ribbon-foreground: var(--ribbon-foreground);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -86,6 +90,8 @@
   --ribbon: oklch(0.16 0.01 260);
   --ribbon-foreground: oklch(0.98 0 0);
   --ribbon-accent: oklch(0.82 0.15 85);
+  --gold: oklch(0.82 0.15 85);
+  --gold-foreground: oklch(0.16 0.01 260);
   --shadow-card: 0 3px 12px oklch(0.2 0.02 255 / 0.09);
   --shadow-button: 0 14px 34px oklch(0.64 0.25 31 / 0.3);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -156,6 +162,16 @@
 
 @utility shadow-button {
   box-shadow: var(--shadow-button);
+}
+
+@utility shadow-gold {
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--gold) 45%, transparent), 0 10px 30px -12px color-mix(in oklab, var(--gold) 40%, transparent);
+}
+
+.bf-glow {
+  background:
+    radial-gradient(60% 45% at 50% 0%, color-mix(in oklab, var(--gold) 14%, transparent), transparent 70%),
+    radial-gradient(40% 35% at 85% 20%, color-mix(in oklab, var(--primary) 8%, transparent), transparent 70%);
 }
 
 .bf-ribbon {
