@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, MapPin, Sparkles, Tag } from "lucide-react";
+import { ArrowUpRight, MapPin, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -29,18 +29,6 @@ const offerUrl = "https://linkthem.net/aff_c?offer_id=3463&aff_id=16139";
 function Index() {
   return (
     <main className="relative flex flex-col overflow-hidden min-h-screen bg-background font-sans text-foreground">
-      <div className="bf-ribbon" aria-label="Black Friday deal">
-        <span>Black Friday</span>
-      </div>
-
-      <div className="flex items-center justify-center gap-2 bg-ribbon px-4 py-2 text-center text-[11px] font-black uppercase tracking-[0.18em] text-ribbon-foreground sm:text-xs">
-        <Tag className="size-3.5 shrink-0 text-gold" aria-hidden="true" />
-        <span>
-          Black Friday Event — <span className="text-gold">Up to $100 in DoorDash credit</span> · Limited time
-        </span>
-        <Tag className="size-3.5 shrink-0 text-gold" aria-hidden="true" />
-      </div>
-
       <header className="border-b border-border bg-card">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-center px-5 sm:h-[72px] sm:justify-start sm:px-8">
           <img src="/doordash-logo.png" alt="DoorDash" className="h-8 w-auto object-contain sm:h-9" />
