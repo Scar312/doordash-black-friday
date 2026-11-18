@@ -168,6 +168,12 @@
   box-shadow: 0 0 0 1px color-mix(in oklab, var(--gold) 45%, transparent), 0 10px 30px -12px color-mix(in oklab, var(--gold) 40%, transparent);
 }
 
+.bf-glow {
+  background:
+    radial-gradient(60% 45% at 50% 0%, color-mix(in oklab, var(--gold) 14%, transparent), transparent 70%),
+    radial-gradient(40% 35% at 85% 20%, color-mix(in oklab, var(--primary) 8%, transparent), transparent 70%);
+}
+
 .bf-ribbon {
   position: absolute;
   top: 0;

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, MapPin, Tag } from "lucide-react";
+import { ArrowUpRight, MapPin, Sparkles, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -47,11 +47,14 @@ function Index() {
         </div>
       </header>
 
-      <section className="px-5 pb-10 pt-12 text-center sm:px-8 sm:pb-14 sm:pt-16">
+      <section className="bf-glow px-5 pb-10 pt-12 text-center sm:px-8 sm:pb-14 sm:pt-16">
         <div className="mx-auto max-w-5xl">
-          <p className="mb-4 text-sm font-bold uppercase tracking-widest text-primary">A little more to enjoy</p>
+          <p className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-gold/50 bg-ribbon px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.18em] text-gold sm:text-xs">
+            <Sparkles className="size-3.5" aria-hidden="true" />
+            Black Friday Deal
+          </p>
           <h1 className="mx-auto max-w-4xl text-4xl font-black leading-tight text-foreground sm:text-5xl lg:text-6xl">
-            Save up to $100 on DoorDash!
+            Save up to <span className="text-primary">$100</span> on DoorDash!
           </h1>
           <div className="mt-7 flex flex-wrap justify-center gap-2.5 sm:gap-3">
             {countries.map((country) => (
@@ -104,12 +107,25 @@ function Index() {
         </div>
       </section>
 
-      <section className="flex-1 bg-primary px-5 py-10 text-center text-primary-foreground sm:px-8 sm:py-12">
+      <section className="flex-1 border-t-2 border-t-gold bg-ribbon px-5 py-10 text-center text-ribbon-foreground sm:px-8 sm:py-12">
         <div className="mx-auto max-w-3xl">
+          <p className="mb-2 text-[11px] font-black uppercase tracking-[0.2em] text-gold sm:text-xs">Black Friday · Ends soon</p>
           <h2 className="text-2xl font-black sm:text-3xl">Ready to get started?</h2>
-          <p className="mt-2 text-sm text-primary-foreground/85 sm:text-base">
+          <p className="mt-2 text-sm text-ribbon-foreground/80 sm:text-base">
             Take the first step toward your DoorDash savings.
           </p>
+          <div className="mt-6">
+            <Button
+              asChild
+              size="lg"
+              className="h-12 w-full max-w-sm rounded-lg bg-gold px-5 text-base font-black uppercase text-gold-foreground shadow-gold transition-transform hover:scale-[1.02] hover:bg-gold/90 sm:text-lg"
+            >
+              <a href={offerUrl} aria-label="Claim your Black Friday DoorDash credit">
+                Claim the Deal
+                <ArrowUpRight className="size-5" aria-hidden="true" />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
     </main>
